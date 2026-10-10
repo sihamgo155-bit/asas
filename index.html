@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>وكالة الاستخبارات المركزية | بوابة تقمص الأدوار</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="seal">CIA<span>RP</span></div><div><b>وكالة الاستخبارات</b><small>مركز العمليات الافتراضي</small></div></div>
+    <div class="demo-tag">بيئة خيالية • ROLEPLAY</div>
+    <nav>
+      <button class="nav active" data-view="dashboard">◈ <span>لوحة القيادة</span></button>
+      <button class="nav" data-view="operations">◎ <span>العمليات</span></button>
+      <button class="nav" data-view="members">♟ <span>الأعضاء</span></button>
+      <button class="nav" data-view="roles">▤ <span>الرتب والصلاحيات</span></button>
+      <button class="nav" data-view="notifications">♧ <span>الإشعارات</span><i id="navBadge">3</i></button>
+      <button class="nav" data-view="activity">≋ <span>سجل النشاطات</span></button>
+      <button class="nav" data-view="settings">⚙ <span>الإعدادات</span></button>
+    </nav>
+    <div class="sidebar-bottom"><div class="status-dot"></div><span>الخادم التجريبي يعمل</span><small>واجهة محلية • v1.0</small></div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <button class="hamburger" id="hamburger" aria-label="فتح القائمة">☰</button>
+      <div><div class="eyebrow">مركز القيادة / <span id="crumb">لوحة القيادة</span></div><h1 id="pageTitle">لوحة القيادة</h1></div>
+      <div class="top-actions"><label class="search">⌕ <input id="globalSearch" placeholder="ابحث في الأعضاء والعمليات…"></label><button class="icon-btn" data-goto="notifications" aria-label="الإشعارات">♧<em id="topBadge">3</em></button><div class="user-pill"><div class="avatar">A</div><div><b id="topUser">Agent_007</b><small>مشرف تجريبي</small></div></div><button id="logoutBtn" class="ghost">خروج</button></div>
+    </header>
+    <section id="loginGate" class="login-gate hidden">
+      <div class="login-card"><div class="seal big">CIA<span>RP</span></div><p class="eyebrow">بوابة مجتمع تقمص الأدوار</p><h2 id="authTitle">تسجيل الدخول</h2><p class="muted">هذه واجهة تجريبية محلية وليست خدمة حكومية رسمية.</p>
+        <form id="authForm"><label>اسم المستخدم<input id="authName" required minlength="3" placeholder="مثال: Agent_007"></label><label>كلمة مرور تجريبية<input id="authPass" required type="password" minlength="4" placeholder="4 أحرف على الأقل"></label><button class="primary full" type="submit">الدخول إلى المركز</button></form>
+        <button id="toggleAuth" class="text-button">إنشاء حساب تجريبي جديد</button><p class="tiny">تنبيه: هذا النموذج لا يوفّر مصادقة آمنة؛ الحسابات محفوظة محليًا في هذا المتصفح فقط.</p>
+      </div>
+    </section>
+    <div id="appContent">
+      <section class="view" id="view-dashboard">
+        <div class="hero"><div><div class="live-label"><span></span> مركز العمليات الافتراضي</div><h2>مرحبًا بعودتك، <span id="welcomeName">Agent_007</span></h2><p>تابع حالة الفريق والمهام الجارية من مكان واحد.</p><div class="hero-actions"><button class="primary" data-action="new-operation">＋ إنشاء عملية</button><button class="secondary" data-goto="members">عرض الفريق ←</button></div></div><div class="radar"><div class="radar-ring r1"></div><div class="radar-ring r2"></div><div class="radar-ring r3"></div><div class="radar-sweep"></div><span>RP / HQ</span></div><div class="hero-watermark">CIA</div></div>
+        <div class="stats"><article class="stat"><div class="stat-icon blue">◎</div><div><small>العمليات النشطة</small><strong id="statOps">4</strong><span class="positive">ضمن بيئة اللعب</span></div></article><article class="stat"><div class="stat-icon cyan">♟</div><div><small>الأعضاء</small><strong id="statMembers">12</strong><span>في قاعدة الفريق</span></div></article><article class="stat"><div class="stat-icon purple">▤</div><div><small>التنبيهات الجديدة</small><strong id="statAlerts">3</strong><span>تحتاج للمراجعة</span></div></article><article class="stat"><div class="stat-icon green">✓</div><div><small>جاهزية الفريق</small><strong>92%</strong><span class="positive">مستوى افتراضي</span></div></article></div>
+        <div class="grid-two"><article class="panel"><div class="panel-head"><div><h3>العمليات الأخيرة</h3><p>آخر تحديثات المهام داخل اللعبة</p></div><button class="text-button" data-goto="operations">عرض الكل ←</button></div><div id="recentOps" class="rows"></div></article><article class="panel"><div class="panel-head"><div><h3>الإشعارات</h3><p>مستجدات الفريق</p></div><button class="text-button" data-goto="notifications">عرض الكل ←</button></div><div id="recentNotifs" class="rows"></div></article></div>
+      </section>
+      <section class="view hidden" id="view-operations"><div class="section-toolbar"><div><h2>إدارة العمليات</h2><p>أنشئ مهامًا خيالية ونظّم حالتها للفريق.</p></div><button class="primary" data-action="new-operation">＋ عملية جديدة</button></div><div class="filters"><input id="opsFilter" placeholder="تصفية العمليات…"><select id="opsStatus"><option value="">كل الحالات</option><option>نشطة</option><option>قيد التخطيط</option><option>مكتملة</option></select></div><div class="panel table-panel"><table><thead><tr><th>اسم العملية</th><th>المسؤول</th><th>الأولوية</th><th>الحالة</th><th>الإجراء</th></tr></thead><tbody id="opsTable"></tbody></table></div></section>
+      <section class="view hidden" id="view-members"><div class="section-toolbar"><div><h2>الأعضاء</h2><p>إدارة ملفات أعضاء مجتمع تقمص الأدوار.</p></div><button class="primary" data-action="new-member">＋ إضافة عضو</button></div><div class="filters"><input id="membersFilter" placeholder="ابحث عن عضو…"><select id="membersRole"><option value="">كل الرتب</option></select></div><div id="memberGrid" class="member-grid"></div></section>
+      <section class="view hidden" id="view-roles"><div class="section-toolbar"><div><h2>الرتب والصلاحيات</h2><p>صلاحيات تنظيمية داخل المجتمع الخيالي فقط.</p></div><button class="primary" data-action="new-role">＋ إضافة رتبة</button></div><div id="rolesGrid" class="roles-grid"></div><div class="notice"><b>ملاحظة:</b> الرتب المعروضة لا تمنح صلاحيات حقيقية على أي نظام خارجي.</div></section>
+      <section class="view hidden" id="view-notifications"><div class="section-toolbar"><div><h2>مركز الإشعارات</h2><p>التنبيهات والإعلانات الداخلية للفريق.</p></div><button class="secondary" id="markAll">تحديد الكل كمقروء</button></div><div id="notificationsList" class="panel rows roomy"></div></section>
+      <section class="view hidden" id="view-activity"><div class="section-toolbar"><div><h2>سجل النشاطات</h2><p>سجل محلي للأحداث التي تنفذها في هذه الواجهة.</p></div><button class="secondary" id="clearActivity">مسح السجل</button></div><div class="panel table-panel"><table><thead><tr><th>الوقت</th><th>المستخدم</th><th>النشاط</th><th>التصنيف</th></tr></thead><tbody id="activityTable"></tbody></table></div></section>
+      <section class="view hidden" id="view-settings"><div class="section-toolbar"><div><h2>إعدادات البوابة</h2><p>خصّص تجربة العرض وبيانات الفريق.</p></div></div><div class="settings-grid"><article class="panel"><h3>ملف العرض</h3><label>اسم الفريق<input id="teamName" value="وكالة الاستخبارات المركزية — RP"></label><label>وصف الفريق<textarea id="teamDesc">مجتمع ألعاب وتقمص أدوار بطابع استخباراتي خيالي.</textarea></label><button class="primary" id="saveSettings">حفظ الإعدادات</button></article><article class="panel"><h3>إدارة البيانات التجريبية</h3><p class="muted">البيانات محفوظة في هذا المتصفح فقط. امسحها لإعادة الواجهة إلى الحالة الابتدائية.</p><button class="danger" id="resetData">إعادة ضبط البيانات</button><p class="tiny">لا تدخل معلومات حقيقية أو كلمات مرور تستخدمها في مواقع أخرى.</p></article></div></section>
+    </div>
+    <footer>بوابة خيالية لتقمص الأدوار والألعاب <span>غير تابعة لأي جهة حكومية • لا تتصل بأنظمة خارجية</span></footer>
+  </main>
+</div>
+<div class="modal-backdrop hidden" id="modalBackdrop"><div class="modal"><div class="modal-head"><h3 id="modalTitle">إضافة عنصر</h3><button id="closeModal" class="icon-btn">✕</button></div><form id="modalForm"><div id="modalFields"></div><div class="modal-actions"><button type="button" class="secondary" id="cancelModal">إلغاء</button><button type="submit" class="primary">حفظ</button></div></form></div></div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body></html>
